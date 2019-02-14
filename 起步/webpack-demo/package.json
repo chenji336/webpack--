@@ -2,8 +2,7 @@
   "name": "webpack-demo",
   "version": "1.0.0",
   "description": "",
-  // "main": "index.js", // 移除掉
-  "private": true, // 防止意外发布你的代码
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,5 +12,8 @@
   "devDependencies": {
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
   }
 }
