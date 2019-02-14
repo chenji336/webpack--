@@ -6,4 +6,9 @@
 webpack4.x npm i -D webpack webpack-cli(不需要漏了webpack-cli))
 
 #### 起步
-+ demo例子进行安装
+
+##### 基本安装
+通过script引入`lodash`，这样会产生一些问题：
++ 脚本执行依赖外部的扩展库
++ 依赖不存在，或则引入顺序错误，会报错
++ 依赖被引入但是没有使用，浏览器还是会下载
