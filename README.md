@@ -40,6 +40,11 @@ webpack默认的`只会解析import和export`，其他的es6方面的需要加�
 > 如果npm想要给webpack传递参数，需要添加--然后传递`npm run build -- --config webpack.config.js`
 
 
-### 资源管理
+### 管理资源
 
-#### 安装&&加载css
+#### 加载css
+1. npm i -D style-loader css-loader
+  > css-loader 会把css打包进去，style-loader会把打包的css放进js里（可以把style-loader去掉查看效果，发现head中没有style）
+2. module中加入loader和规则
+3. 引入style.css
+4. 查看页面，会发现在head中添加了<style>.hello{color:red}<style>
