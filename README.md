@@ -1,6 +1,9 @@
 [TOC]
 # 学习webpack指南中的demo，进行比较学习
 
+## 须知
+指南的所有的例子都是在webpack-demo中，其他的都是相应的扩展，可以单独查看（里面会有README的介绍)
+
 ## 各个目录知识点
 
 ### 安装
@@ -48,3 +51,6 @@ webpack默认的`只会解析import和export`，其他的es6方面的需要加�
 2. module中加入loader和规则
 3. 引入style.css
 4. 查看页面，会发现在head中添加了<style>.hello{color:red}<style>
+  > webpack-demo-css 是对于css的扩展，具体内容可以查看里面的REAdME
+
+
