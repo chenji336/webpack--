@@ -8,7 +8,7 @@
 
 ### 安装
 webpack4.x npm i -D webpack webpack-cli(不需要漏了webpack-cli))
-
+**webpack默认只能处理js**
 
 ### 起步
 
@@ -49,8 +49,14 @@ webpack默认的`只会解析import和export`，其他的es6方面的需要加�
 1. npm i -D style-loader css-loader
   > css-loader 会把css打包进去，style-loader会把打包的css放进js里（可以把style-loader去掉查看效果，发现head中没有style）
 2. module中加入loader和规则
-3. 引入style.css
+3. 引入style.css(没有loader，import是会报错的，webpack默认引入的只有js)
 4. 查看页面，会发现在head中添加了<style>.hello{color:red}<style>
-  > webpack-demo-css 是对于css的扩展，具体内容可以查看里面的REAdME
+  
+> webpack-demo-css 是对于css的扩展，具体内容可以查看里面的REAdME
 
+#### 加载图片
+1. npm i -D file-loader
+2. webpck配置 file-loader
+3. build之后会生成相应的相应的图片，如果css引用，css-loader也会进行转化到相应的路径
 
+> webpck-demo-img 是对于image的扩展，包括压缩和优化
