@@ -60,3 +60,7 @@ webpack默认的`只会解析import和export`，其他的es6方面的需要加�
 3. build之后会生成相应的相应的图片，如果css引用，css-loader也会进行转化到相应的路径
 
 > webpck-demo-img 是对于image的扩展，包括压缩和优化
+
+#### 加载字体
+file-loader和url-loader不仅可以加载图片，也可以加载其他文件，比如字体文件。
+配置如图片
