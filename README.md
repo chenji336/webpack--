@@ -72,3 +72,8 @@ file-loader和url-loader不仅可以加载图片，也可以加载其他文件�
 + import的数据默认是Object格式的，可以直接使用
 + json格式的数据，webpack默认就能识别到
 + xml和csv(tsv)需要使用loader才能加载（xml-loader、csv-loader)
+
+#### 全局资源
+把所有文件都放在需要的目录里面，可以对比一下vue文件（vue-music的component）
+**如何让文件的输出路径在不同文件夹下面了**
+  > 可以设置各自不同的filename,里面就包含了路径，我们这里拿img来做测试
