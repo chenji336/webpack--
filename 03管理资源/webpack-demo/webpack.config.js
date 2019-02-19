@@ -19,7 +19,17 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: [
-                    'file-loader'
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            /*
+                            * 会发现img是相对于output里面的路径
+                            * 输出：dist/img/icon-17b1b9.png
+                            */
+                            name: 'img/[name]-[hash:6].[ext]'
+                        }
+                    }
+
                 ]
             },
             {

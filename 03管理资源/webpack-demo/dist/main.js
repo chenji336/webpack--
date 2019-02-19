@@ -205,7 +205,7 @@ eval("module.exports = {\"note\":{\"to\":[\"Mary\"],\"from\":[\"John\"],\"headin
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"17b1b9c94fbf215abe24c7f8e1d110da.png\";\n\n//# sourceURL=webpack:///./src/icon.png?");
+eval("module.exports = __webpack_require__.p + \"img/icon-17b1b9.png\";\n\n//# sourceURL=webpack:///./src/icon.png?");
 
 /***/ }),
 
