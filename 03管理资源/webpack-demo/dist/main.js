@@ -176,6 +176,28 @@ eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\
 
 /***/ }),
 
+/***/ "./src/data.json":
+/*!***********************!*\
+  !*** ./src/data.json ***!
+  \***********************/
+/*! exports provided: jsonKey, default */
+/***/ (function(module) {
+
+eval("module.exports = {\"jsonKey\":\"jsonValue\"};\n\n//# sourceURL=webpack:///./src/data.json?");
+
+/***/ }),
+
+/***/ "./src/data.xml":
+/*!**********************!*\
+  !*** ./src/data.xml ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = {\"note\":{\"to\":[\"Mary\"],\"from\":[\"John\"],\"heading\":[\"Reminder\"],\"body\":[\"Call Cindy on Tuesday\"]}}\n\n//# sourceURL=webpack:///./src/data.xml?");
+
+/***/ }),
+
 /***/ "./src/icon.png":
 /*!**********************!*\
   !*** ./src/icon.png ***!
@@ -195,7 +217,7 @@ eval("module.exports = __webpack_require__.p + \"17b1b9c94fbf215abe24c7f8e1d110d
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _icon_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./icon.png */ \"./src/icon.png\");\n/* harmony import */ var _icon_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_icon_png__WEBPACK_IMPORTED_MODULE_2__);\n\n\n // 默认除了js，其他都要加后缀，除非配置了\n\nfunction component() {\n    var element = document.createElement('div')\n\n    // Lodash(目前是通过一个 script 脚步引入)对于执行这一行是必须的\n    // Lodash 现在通过import引入进来\n    element.innerHTML = lodash__WEBPACK_IMPORTED_MODULE_0___default.a.join(['Hello', 'webpack'], ' ')\n    element.classList.add('hello')\n\n    // 将图片添加到现有的div\n    var myIcon = new Image()\n    myIcon.src = _icon_png__WEBPACK_IMPORTED_MODULE_2___default.a\n    element.appendChild(myIcon)\n\n    return element\n}\n\ndocument.body.appendChild(component())\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _icon_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./icon.png */ \"./src/icon.png\");\n/* harmony import */ var _icon_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_icon_png__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data.json */ \"./src/data.json\");\nvar _data_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./data.json */ \"./src/data.json\", 1);\n/* harmony import */ var _data_xml__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data.xml */ \"./src/data.xml\");\n/* harmony import */ var _data_xml__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_data_xml__WEBPACK_IMPORTED_MODULE_4__);\n\n\n // 默认除了js，其他都要加后缀，除非配置了\n\n\n\nfunction component() {\n    var element = document.createElement('div')\n\n    // Lodash(目前是通过一个 script 脚步引入)对于执行这一行是必须的\n    // Lodash 现在通过import引入进来\n    element.innerHTML = lodash__WEBPACK_IMPORTED_MODULE_0___default.a.join(['Hello', 'webpack'], ' ')\n    element.classList.add('hello')\n\n    // 将图片添加到现有的div\n    var myIcon = new Image()\n    myIcon.src = _icon_png__WEBPACK_IMPORTED_MODULE_2___default.a\n    element.appendChild(myIcon)\n\n    console.log('JSONDATA:', _data_json__WEBPACK_IMPORTED_MODULE_3__)\n    console.log('XMLDATA:', _data_xml__WEBPACK_IMPORTED_MODULE_4___default.a)\n\n    return element\n}\n\ndocument.body.appendChild(component())\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 

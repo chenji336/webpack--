@@ -1,6 +1,8 @@
 import _ from 'lodash'
 import './style.css'
 import Icon from './icon.png' // 默认除了js，其他都要加后缀，除非配置了
+import JSONDATA from './data.json'
+import XMLDATA from './data.xml'
 
 function component() {
     var element = document.createElement('div')
@@ -14,6 +16,9 @@ function component() {
     var myIcon = new Image()
     myIcon.src = Icon
     element.appendChild(myIcon)
+
+    console.log('JSONDATA:', JSONDATA)
+    console.log('XMLDATA:', XMLDATA)
 
     return element
 }

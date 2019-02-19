@@ -64,3 +64,11 @@ webpack默认的`只会解析import和export`，其他的es6方面的需要加�
 #### 加载字体
 file-loader和url-loader不仅可以加载图片，也可以加载其他文件，比如字体文件。
 配置如图片
+
+#### 加载数据
+构建的时候就可以加入数据，不需要在发送http请求了
+> 不使用webpack之前，是准们通过发送http请求来获取一个.json格式数据的
+
++ import的数据默认是Object格式的，可以直接使用
++ json格式的数据，webpack默认就能识别到
++ xml和csv(tsv)需要使用loader才能加载（xml-loader、csv-loader)
