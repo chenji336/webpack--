@@ -154,3 +154,5 @@ webpack-dev-server内部使用了webpack-dev-middleware
 配合express使用：
 1. npm i -D express webpack-dev-middleware
 2. express().use webpackDevMiddleware中间件，记得配置publicPath
+
+缺点： 配合express使用，修改页面的时候不会自动刷新，需要手动自己刷新浏览器。可以参考使用webpck-hot-middleware解决
