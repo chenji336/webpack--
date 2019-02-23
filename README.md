@@ -107,3 +107,12 @@ dist随着build文件越来越多，所以每次build之前最好进行清理
 ### 开发
 
 准们为开发环境准备的webpack配置
+
+#### 使用source map
+要不然打包编译成一个bundle，会找不到具体报错我文件位置
+
+开发环境使用的devtool配置（不会生成map，会直接嵌套在js文件中)
++ inline-source-map 不会生成单独的map文件，但是确实也是存在的
+  > 报错就可以详细到具体位置，如果用cheap-module-eval-source-map,因为调试的时候常常调试不出来。
+
+如果是生成环境devtool配置，可以使用cheap-module-source-map，build会生成.map的文件
