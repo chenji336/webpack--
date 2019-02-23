@@ -85,3 +85,10 @@ file-loader和url-loader不仅可以加载图片，也可以加载其他文件�
 1. 添加另外一个print.js文件
 2. webpack根据entry名称，打包生成相应的文件
 3. html中引用webpack之后的print.js和主文件
+
+#### 设定HtmlWebpackPlugin
+每次打包之后都要自己去修改html中的引入，很麻烦，所以使用HtmlWebpackPlugin进行自动引入
+1. npm i -D html-webpack-plugin
+2. webpack中配置plugin进行添加
+
+[更多详细操作](https://github.com/jantimon/html-webpack-plugin)
