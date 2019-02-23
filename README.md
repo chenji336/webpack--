@@ -92,3 +92,8 @@ file-loader和url-loader不仅可以加载图片，也可以加载其他文件�
 2. webpack中配置plugin进行添加
 
 [更多详细操作](https://github.com/jantimon/html-webpack-plugin)
+
+#### 清理 /dist文件夹
+dist随着build文件越来越多，所以每次build之前最好进行清理
+1. npm i -D clean-webpack-plugin
+2. webpack-plugins-添加
