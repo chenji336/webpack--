@@ -116,3 +116,8 @@ dist随着build文件越来越多，所以每次build之前最好进行清理
   > 报错就可以详细到具体位置，如果用cheap-module-eval-source-map,因为调试的时候常常调试不出来。
 
 如果是生成环境devtool配置，可以使用cheap-module-source-map，build会生成.map的文件
+
+#### 选择一个开发工具
+1. webpack watch 自动生成，但会手动刷新
+2. webpack-dev-server，自动刷新
+3. webpack-dev-middleware 配合nodejs使用
