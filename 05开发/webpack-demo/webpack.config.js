@@ -9,6 +9,9 @@ module.exports = {
         print: './src/print.js'
     },
     devtool: 'inline-source-map', // 不建议使用cheap-module-eval-source-map
+    devServer: {
+        contentBase: './dist', // 会在缓存中查找这个文件
+    },
     plugins: [ // 放在entry后面和output前面，应该是说plugin是对entry进行操作的，顺序是在output之前
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({

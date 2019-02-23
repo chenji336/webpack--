@@ -128,3 +128,17 @@ webpack --watch
 缺点：
 1. 需要自己刷新浏览器（有时候还需要自己清除缓存）
 2. 还是要通过http-server启动查看html
+
+#### 使用webpack-dev-server
+优点：
+1. 会自动刷新浏览器
+2. 默认启动一个8080端口的服务（当然也可以自己设置port)
+缺点：
+每次都要刷新浏览器，这样每次都不能保存当时状体了，后续热块热替换部分会进行解决
+
+使用：
+1. npm i -D webpack-dev-server
+2. devServer: {contentBase: './dist'} (devServer S是大写)
+3. webpack-dev-server --open 自动打开
+
+[更多的配置](https://webpack.docschina.org/configuration/dev-server)
