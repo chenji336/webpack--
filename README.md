@@ -121,3 +121,10 @@ dist随着build文件越来越多，所以每次build之前最好进行清理
 1. webpack watch 自动生成，但会手动刷新
 2. webpack-dev-server，自动刷新
 3. webpack-dev-middleware 配合nodejs使用
+
+#### 使用观察者模式
+webpack --watch
+优点：自动编译
+缺点：
+1. 需要自己刷新浏览器（有时候还需要自己清除缓存）
+2. 还是要通过http-server启动查看html
