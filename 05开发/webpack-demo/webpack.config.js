@@ -20,6 +20,7 @@ module.exports = {
     ],
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist') // 要求必须是absolute path
+        path: path.resolve(__dirname, 'dist'), // 要求必须是absolute path
+        publicPath: '/'
     },
 }

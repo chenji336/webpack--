@@ -145,3 +145,12 @@ webpack --watch
 
 > 额外篇章，contentBase引起的思考，具体作用？然后引出对比path和publicPath.[文章](https://juejin.im/post/5bb085dd6fb9a05cd24da5cf)。
   顺带的思考下怎么样自动打开网页，但是发现已经打开则只是进行跳转？
+
+#### 使用webpack-dev-middlware
+
+webpack-dev-middleware是一个容器，它可以把webpack处理后的文件传递给一个服务器
+webpack-dev-server内部使用了webpack-dev-middleware
+
+配合express使用：
+1. npm i -D express webpack-dev-middleware
+2. express().use webpackDevMiddleware中间件，记得配置publicPath
