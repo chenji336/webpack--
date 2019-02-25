@@ -175,3 +175,8 @@ webpack-dev-server内部使用了webpack-dev-middleware
 1. node使用webpack-dev-server
 2. 使用HMR就不能把devServer放在config中，而应该单独的提出来使用
 3. 包含HMR入口点，可以使用webpack.addDevServerEntrypoints方法
+
+#### 问题
+就是启动HMR中遇到的，点击时候不能更新
+解决： 在hot.accept的时候移除旧的事件，添加新的事件
+以后很多地方不需要这样手动的处理，因为存在很多loader可以帮我们处理掉
