@@ -180,3 +180,6 @@ webpack-dev-server内部使用了webpack-dev-middleware
 就是启动HMR中遇到的，点击时候不能更新
 解决： 在hot.accept的时候移除旧的事件，添加新的事件
 以后很多地方不需要这样手动的处理，因为存在很多loader可以帮我们处理掉
+
+#### HMR修改样式
+样式的修改之后一般情况下需要我们刷新浏览器，但是借助于style-loader,当样式改变时候，style-loader会在**后台使用module.hot.accept**帮我们修补（patch）`<style>`标签

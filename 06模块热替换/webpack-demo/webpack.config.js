@@ -14,6 +14,14 @@ module.exports = {
         contentBase: './dist', // 如果没有publicPath，那么contentBase不起作用
         hot: true,
     },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
+    },
     plugins: [ // 放在entry后面和output前面，应该是说plugin是对entry进行操作的，顺序是在output之前
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
