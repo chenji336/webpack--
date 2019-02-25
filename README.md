@@ -161,3 +161,12 @@ webpack-dev-server内部使用了webpack-dev-middleware
 不需要重新刷新浏览器，会保留之前的状态
 > webpack中默认只能对js有效，如果用了jsx之类的需要使用插件来解决
 [原理篇](https://zhuanlan.zhihu.com/p/30669007)
+
+#### 启用HMR
+1. devServer.hot=true
+2. plugins.push(new webpack.HotModuleReplacement())
+3. index.js文件中使用module.hot监听改变的文件
+4. 只能监听自己bundle中的文件（所以开头需要让print.js被打包跟index.js一样的bundle里面)
+
+**问题**
+> 发现我修改了printMe里面的内容，我在点击的时候发现是没有改变的
