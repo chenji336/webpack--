@@ -170,3 +170,8 @@ webpack-dev-server内部使用了webpack-dev-middleware
 
 **问题**
 > 发现我修改了printMe里面的内容，我在点击的时候发现是没有改变的
+
+#### 启用Node.js API
+1. node使用webpack-dev-server
+2. 使用HMR就不能把devServer放在config中，而应该单独的提出来使用
+3. 包含HMR入口点，可以使用webpack.addDevServerEntrypoints方法
