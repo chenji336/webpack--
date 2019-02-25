@@ -156,3 +156,8 @@ webpack-dev-server内部使用了webpack-dev-middleware
 2. express().use webpackDevMiddleware中间件，记得配置publicPath
 
 缺点： 配合express使用，修改页面的时候不会自动刷新，需要手动自己刷新浏览器。可以参考使用webpck-hot-middleware解决
+
+## 模块热替换
+不需要重新刷新浏览器，会保留之前的状态
+> webpack中默认只能对js有效，如果用了jsx之类的需要使用插件来解决
+[原理篇](https://zhuanlan.zhihu.com/p/30669007)
