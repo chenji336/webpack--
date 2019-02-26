@@ -161,6 +161,8 @@ webpack-dev-server内部使用了webpack-dev-middleware
 不需要重新刷新浏览器，会保留之前的状态
 > webpack中默认只能对js有效，如果用了jsx之类的需要使用插件来解决
 [原理篇](https://zhuanlan.zhihu.com/p/30669007)
+1. webpack-dev-server依赖webpack-dev-middle,webpack-dev-middle缓存技术依赖memory-fs。
+2. 通过websocket发送hash的变化，通知是否应该更新。如果需要更新再通过jsonp进行拉取最新的模板。不通过websocket的是因为各司其职。而且webpack-hot-middle也不是通过websocket进行推送的，是通过EventSource
 
 #### 启用HMR
 1. devServer.hot=true
