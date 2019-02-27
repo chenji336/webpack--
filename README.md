@@ -185,3 +185,9 @@ webpack-dev-server内部使用了webpack-dev-middleware
 
 #### HMR修改样式
 样式的修改之后一般情况下需要我们刷新浏览器，但是借助于style-loader,当样式改变时候，style-loader会在**后台使用module.hot.accept**帮我们修补（patch）`<style>`标签
+
+
+## tree shaking
+没有使用的代码（import但没有使用的），都不放在打包文件中（把树的死叶子全部摇晃下来）
+> 代码最开始是跟02起步一样的
+
