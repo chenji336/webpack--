@@ -188,6 +188,13 @@ webpack-dev-server内部使用了webpack-dev-middleware
 
 
 ## tree shaking
-没有使用的代码（import但没有使用的），都不放在打包文件中（把树的死叶子全部摇晃下来）
+没有使用的代码（import但没有使用的或则没有import的模块中的方法），都不放在打包文件中（把树的死叶子全部摇晃下来）
 > 代码最开始是跟02起步一样的
+
+#### 添加一个通用模块
+1. A模块中export两个方法m1、m2
+2. B模块中引用A模块的一个m1方法
+3. 打包
+4. bundle中既然有两个方法，但是我不需要m2啊
+> 例子中可以看到square没有引用却在bundle中有
 
