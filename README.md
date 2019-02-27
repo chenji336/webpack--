@@ -198,3 +198,18 @@ webpack-dev-server内部使用了webpack-dev-middleware
 4. bundle中既然有两个方法，但是我不需要m2啊
 > 例子中可以看到square没有引用却在bundle中有
 
+#### 将文件标记为无副作用[side-effect-free]
+理解：无副作用表示我可以删除掉没有引用和使用的方法以及模块
+
+使用：
++ 在package.json中标记'sideEffects': true，就可以全部为无副作用
++ 在module.rules中可以标记sideEffects
+
+易错点：
+如果import的是polyfill或则css，则需要把这些排除在外，否则也会被删除（这些都是有副作用的）
+> polyfill的副作用是改变全局原型；css的副作用是添加样式
+
+误区：
+只有sideEffects是不能进行删除的，还需要配合`压缩代码`(比如使用uglifyJSPlugin)
+
+
