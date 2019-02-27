@@ -1,6 +1,5 @@
 {
   "name": "webpack-demo",
-  "sideEffects": false,
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -12,10 +11,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "lodash-es": "^4.17.11",
     "webpack": "^4.29.3",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "webpack-deep-scope-plugin": "^1.6.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "lodash": "^4.17.11"
   }
 }

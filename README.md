@@ -212,4 +212,18 @@ webpack-dev-server内部使用了webpack-dev-middleware
 误区：
 只有sideEffects是不能进行删除的，还需要配合`压缩代码`(比如使用uglifyJSPlugin)
 
+#### 压缩输出
+开启uglifyJSPlugin(推荐两种方法）:
+1. 设置mode: 'production'
+2. webpack --optimize-minimize
+
+**发现sideEffects写在package.json中无效**
+误区：不是自己这个package.json的sideEffects,而应该是别的库的sideEffects(比如lodash的sideEffects)
+1. lodash的package默认没有sideEffects
+2. 所以引入lodash，但是没有使用，还是会打包引入
+3. 在node_module中找到lodash>package,然后添加sideEffects:false
+4. 可以发现第二步的问题解决了，引入没使用则不会打包进去
+[lodash vs lodash-es](https://www.blazemeter.com/blog/the-correct-way-to-import-lodash-libraries-a-benchmark)
+[tree shaking缺陷和解决方案](https://juejin.im/post/5b8ce49df265da438151b468)
+
 
