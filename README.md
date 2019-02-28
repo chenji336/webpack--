@@ -263,3 +263,10 @@ new webpack.DefinePlugin({
 如果使用复杂点可以配合cssnano使用
 
 [使用](https://blog.csdn.net/weixin_36185028/article/details/82182352)
+
+### CLI替代选项
+mode:'production' => webpack -p
+启用ugnifyJs => webpack--optimize-minimize 
+new DefinePlugin({xxxxx}) => --define process.env.NODE_ENV="'production'"
+
+当mode:production已经包含来ugnifyJS和DefinePlugin
