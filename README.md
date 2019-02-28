@@ -239,3 +239,6 @@ webpack-dev-server内部使用了webpack-dev-middleware
 1. webpack-dev-server --open --config webpack.dev.js
 2. webpack --config webpack.prod.js
 
+#### source map
+生产环境使用的source map是devtool:'source-map'
+> 教程中引用uglifyJSPlugin，然后设置其sourceMap:true,没有太明白意义。因为在production环境下已经会使用uglify了
