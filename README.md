@@ -279,3 +279,8 @@ new DefinePlugin({xxxxx}) => --define process.env.NODE_ENV="'production'"
 + 防止重复： 使用 `SplitChunks` 去重和分离chunk
 + 动态倒入： 通过模块的内联函数调用来分离代码
   > 动态导入的时候看看是不是有重复代码，如果有使用 防止重复 看看
+
+#### 入口起点
+这个是最简单的方法，只要在entry引入就行，不过缺点也很明显
+1. lodash在两个模块中重复引入了
+2. index.js如果想要动态引入print.js，这种方法不好弄
