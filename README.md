@@ -284,3 +284,10 @@ new DefinePlugin({xxxxx}) => --define process.env.NODE_ENV="'production'"
 这个是最简单的方法，只要在entry引入就行，不过缺点也很明显
 1. lodash在两个模块中重复引入了
 2. index.js如果想要动态引入print.js，这种方法不好弄
+
+#### 防止重复
+解决上面lodash多次引入问题
+
+webpack4 使用SplitChunksPlugin代替了CommonChunksPlugin
+
+如果有公用的代码，那么则会生成vendors~app~other.bunld.js(证明app和other有公用的，如果多个则多个连接)
