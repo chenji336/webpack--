@@ -255,3 +255,11 @@ new webpack.DefinePlugin({
 使用：process.env.NODE_ENV
 
 优势： 很多库会根据是生产环境来进行代码的优化，如果使用的是react，会发现production打包的时候会小很多
+
+#### 压缩css
+很多人说使用css-loader.options.minimize:true,这个在高版本中是无效的
+
+推荐使用：optimize-css-assets-webpack-plugin
+如果使用复杂点可以配合cssnano使用
+
+[使用](https://blog.csdn.net/weixin_36185028/article/details/82182352)
