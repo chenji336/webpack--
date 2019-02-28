@@ -232,5 +232,10 @@ webpack-dev-server内部使用了webpack-dev-middleware
 1. npm i -D webpack-merge,用来合并代码
 2. 分成是那个文件： webpack.common.js webpack.dev.js webpack.prod.js
 3. common是公用部分  dev和prod分别是开发和生产环境部分
+> 如果git reset 到这个版本，会有问题，因为不小心删掉了webpack.common.js，需要注意下
 
+#### NPM Scripts
+配置package的script
+1. webpack-dev-server --open --config webpack.dev.js
+2. webpack --config webpack.prod.js
 
