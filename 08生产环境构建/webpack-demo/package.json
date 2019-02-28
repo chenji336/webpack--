@@ -5,16 +5,20 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build:dev": "webpack --config webpack.dev.js",
+    "build:prod": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "clean-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
     "lodash-es": "^4.17.11",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3",
-    "webpack-deep-scope-plugin": "^1.6.0"
+    "webpack-deep-scope-plugin": "^1.6.0",
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",

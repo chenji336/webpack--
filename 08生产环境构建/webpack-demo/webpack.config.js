@@ -1,5 +1,7 @@
 const path = require('path')
-// const WebpackDeepScopeAnalysisPlugin = require('webpack-deep-scope-plugin').default;
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+// const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 
 module.exports = {
     mode: 'production',
@@ -7,16 +9,5 @@ module.exports = {
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist')
-    },
-    module: {
-        rules: [
-            {
-                include: path.resolve(__dirname, 'src'),
-                sideEffects: false
-            }
-        ]
-    },
-    plugins: [
-        // new WebpackDeepScopeAnalysisPlugin()
-    ]
+    }
 }
