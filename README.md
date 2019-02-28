@@ -270,3 +270,12 @@ mode:'production' => webpack -p
 new DefinePlugin({xxxxx}) => --define process.env.NODE_ENV="'production'"
 
 当mode:production已经包含来ugnifyJS和DefinePlugin
+
+## 代码分离
+代码拷贝自04管理输出
+
+三种代码分离的方法：
++ 入口起点：使用 `entry` 配置手动的分离代码
++ 防止重复： 使用 `SplitChunks` 去重和分离chunk
++ 动态倒入： 通过模块的内联函数调用来分离代码
+  > 动态导入的时候看看是不是有重复代码，如果有使用 防止重复 看看
