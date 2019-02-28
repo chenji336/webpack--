@@ -291,3 +291,19 @@ new DefinePlugin({xxxxx}) => --define process.env.NODE_ENV="'production'"
 webpack4 使用SplitChunksPlugin代替了CommonChunksPlugin
 
 如果有公用的代码，那么则会生成vendors~app~other.bunld.js(证明app和other有公用的，如果多个则多个连接)
+
+#### 动态导入
+  >因为动态导入的demo需要删除一些文件和代码，为了以后更好的查看demo，所以添加了一个webpack-demo+动态导入
+
+动态导入分有两种方法：
+1. es6的import
+  > import调用会在内部使用promise，所以旧版本浏览器需要引入一个polyfill(promise-polyfilll或es6-promise)
+2. webpack自带的require.ensure
+
+实现步骤：
+1. output中添加`chunkFilename: 'xxx'`: 非入口chunk的名称；如果没写默认使用filename
+2. 代码中import动态引用文件
+  + 如果不想要[id].bundle.js，需要使用/* webpackChunkName:'xxx' */
+  + 引入自己的文件前面不会有vendors~,如果是lodash就会有
+  + 引入之后，需要添加**.default**,了解成require之后默认没有default就好
+
