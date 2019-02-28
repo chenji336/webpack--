@@ -242,3 +242,16 @@ webpack-dev-server内部使用了webpack-dev-middleware
 #### source map
 生产环境使用的source map是devtool:'source-map'
 > 教程中引用uglifyJSPlugin，然后设置其sourceMap:true,没有太明白意义。因为在production环境下已经会使用uglify了
+
+#### 指定环境
+
+```js
+new webpack.DefinePlugin({
+  'process.env.NODE_ENV': JSON.stringify('production')
+})
+```
+等价于 NODE_ENV=production node index.js
+
+使用：process.env.NODE_ENV
+
+优势： 很多库会根据是生产环境来进行代码的优化，如果使用的是react，会发现production打包的时候会小很多
