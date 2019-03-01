@@ -306,4 +306,7 @@ webpack4 使用SplitChunksPlugin代替了CommonChunksPlugin
   + 如果不想要[id].bundle.js，需要使用/* webpackChunkName:'xxx' */
   + 引入自己的文件前面不会有vendors~,如果是lodash就会有
   + 引入之后，需要添加**.default**,了解成require之后默认没有default就好
+    > lodash没有可不加 ._default是因为 _.join方法也被export出来了
+
+使用async方法改造代码使用（promise换成async）
 
