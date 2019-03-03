@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import Print from './print'
 
 function component() {
 
@@ -9,15 +10,7 @@ function component() {
     btn.innerHTML = 'Click me and check the console'
     element.appendChild(btn)
     
-    btn.onclick = e => {
-        console.log('btn click')
-
-        // 按需加载引入一次就不会在进行加载了（可以查看network）
-        import(/* webpackChunkName: 'print' */ './print').then(module => {
-            const print = module.default // 一定要加.default
-            print() 
-        })
-    }
+    element.onclick = Print.bind(null, 'Hello webpack!');
     return element
 
 }

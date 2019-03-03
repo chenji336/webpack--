@@ -346,3 +346,13 @@ webpack4.6.0+才支持；我现在使用的版本是4.29.6 (29>6)
   2. test、priority and reuseExistingChunk 只能在cacehGroups中使用
   3. 可以按照文件来进行依赖生成（生成多个vendor文件）
   4. 第三条不确定，后续使用到在补充 [实践](https://zxc0328.github.io/2018/06/19/webpack-4-config-best-practices/)
+
+#### 模板标示符
+这章的翻译用的还是之前的老版本的，建议直接看英文版本 时间：2019-3-3
+
+`为啥要标识符`：import 新文件，本来只应该修改main.js的hash，但是却会影响vendor.js的hash，这个不是我们想要的。比如import print,那么相应的module id就变了，就算是chunkname也会有问题，最好是根据路径来，而不是id
+  > 注意：一定要在mode:production，如果是在开发环境是看不到效果的，切记！！！！
+
+`解决`：new webpack.HasedhModuleIdsPlugin()
+
+

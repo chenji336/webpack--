@@ -1,9 +1,10 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
-    mode: 'development',
+    mode: 'production', // 设置production是为了查看vendor的hash根据import print而变化
     entry: {
         app: './src/index.js',
     },
@@ -11,7 +12,8 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: 'cache'
-        })
+        }),
+        new webpack.HashedModuleIdsPlugin()
     ],
     output: {
         filename: '[name].[chunkhash].js',
