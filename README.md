@@ -291,6 +291,7 @@ new DefinePlugin({xxxxx}) => --define process.env.NODE_ENV="'production'"
 webpack4 使用SplitChunksPlugin代替了CommonChunksPlugin
 
 如果有公用的代码，那么则会生成vendors~app~other.bunld.js(证明app和other有公用的，如果多个则多个连接)
+  > 可以通过splitChunks.name 来进行重命名的，也可以把多个vendors~app合成一个
 
 #### 动态导入
   >因为动态导入的demo需要删除一些文件和代码，为了以后更好的查看demo，所以添加了一个webpack-demo+动态导入
@@ -331,9 +332,17 @@ webpack4.6.0+才支持；我现在使用的版本是4.29.6 (29>6)
 ### 缓存
 通过hash值来控制缓存
 
-####输出文件的文件名
+#### 输出文件的文件名
 
 添加chunkhash修改输出的文件名，这个会根据自己文件生成hash
 不要使用[hash],因为这样全局的hash保持一致。比如修改了index.js内容，lodash的hash也会变
 
-
+#### 提取模板
+把一些通用的部分提取出来
++ optimization.runtimeChunk可以提取runtime的公用代码,build之后多出bundle.[chunkhash].js
+  > runtime代码就是每次打包生成最上面的function，每个入口都会包含进去，所以打包成一个chunk会减少size
++ optimization.splitChunks.cacheGroups作用
+  1. 覆盖splitChunks.*
+  2. test、priority and reuseExistingChunk 只能在cacehGroups中使用
+  3. 可以按照文件来进行依赖生成（生成多个vendor文件）
+  4. 第三条不确定，后续使用到在补充 [实践](https://zxc0328.github.io/2018/06/19/webpack-4-config-best-practices/)

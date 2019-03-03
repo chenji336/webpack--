@@ -18,4 +18,16 @@ module.exports = {
         chunkFilename: '[name].[chunkhash].js', // 如果没有名字会默认使用filename名称
         path: path.resolve(__dirname, 'dist') // 要求必须是absolute path
     },
+    optimization: {
+        runtimeChunk: 'single',
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/, // 把node_modules的文件都进行打包成一个
+                    chunks: 'all',
+                    name: 'vendors'
+                }
+            }
+        }
+    }
 }
