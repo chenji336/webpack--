@@ -1,4 +1,4 @@
-<!-- [TOC] -->
+[TOC]
 # 学习webpack指南中的demo，进行比较学习
 
 ## 须知
@@ -93,7 +93,7 @@ file-loader和url-loader不仅可以加载图片，也可以加载其他文件�
 
 [更多详细操作](https://github.com/jantimon/html-webpack-plugin)
 
-#### 清理 /dist文件夹]
+#### 清理 /dist文件夹
 dist随着build文件越来越多，所以每次build之前最好进行清理
 1. npm i -D clean-webpack-plugin
 2. webpack-plugins-添加
@@ -157,7 +157,7 @@ webpack-dev-server内部使用了webpack-dev-middleware
 
 缺点： 配合express使用，修改页面的时候不会自动刷新，需要手动自己刷新浏览器。可以参考使用webpck-hot-middleware解决
 
-## 模块热替换
+### 模块热替换
 不需要重新刷新浏览器，会保留之前的状态
 > webpack中默认只能对js有效，如果用了jsx之类的需要使用插件来解决
 [原理篇](https://zhuanlan.zhihu.com/p/30669007)
@@ -187,7 +187,7 @@ webpack-dev-server内部使用了webpack-dev-middleware
 样式的修改之后一般情况下需要我们刷新浏览器，但是借助于style-loader,当样式改变时候，style-loader会在**后台使用module.hot.accept**帮我们修补（patch）`<style>`标签
 
 
-## tree shaking
+### tree shaking
 没有使用的代码（import但没有使用的或则没有import的模块中的方法），都不放在打包文件中（把树的死叶子全部摇晃下来）
 > 代码最开始是跟02起步一样的
 
@@ -226,7 +226,7 @@ webpack-dev-server内部使用了webpack-dev-middleware
 [lodash vs lodash-es](https://www.blazemeter.com/blog/the-correct-way-to-import-lodash-libraries-a-benchmark)
 [tree shaking缺陷和解决方案](https://juejin.im/post/5b8ce49df265da438151b468)
 
-## 生产环境构建
+### 生产环境构建
 
 #### 配置
 1. npm i -D webpack-merge,用来合并代码
@@ -264,14 +264,14 @@ new webpack.DefinePlugin({
 
 [使用](https://blog.csdn.net/weixin_36185028/article/details/82182352)
 
-### CLI替代选项
+#### CLI替代选项
 mode:'production' => webpack -p
 启用ugnifyJs => webpack--optimize-minimize 
 new DefinePlugin({xxxxx}) => --define process.env.NODE_ENV="'production'"
 
 当mode:production已经包含来ugnifyJS和DefinePlugin
 
-## 代码分离
+### 代码分离
 代码拷贝自04管理输出
 
 三种代码分离的方法：
@@ -310,3 +310,9 @@ webpack4 使用SplitChunksPlugin代替了CommonChunksPlugin
 
 使用async方法改造代码使用（promise换成async）
 
+#### preload和prefecth
+webpack4.6.0+才支持；我现在使用的版本是4.29.6 (29>6)
+[更详细文章](https://www.zcfy.cc/article/link-rel-prefetch-preload-in-webpack)
+
+#### bundle分析
+推荐使用webpack-bundle-analyzer
