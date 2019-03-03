@@ -14,8 +14,8 @@ module.exports = {
         })
     ],
     output: {
-        filename: '[name].bundle.js',
-        chunkFilename: '[name].bundle.js', // 如果没有名字会默认使用filename名称
+        filename: '[name].[chunkhash].js',
+        chunkFilename: '[name].[chunkhash].js', // 如果没有名字会默认使用filename名称
         path: path.resolve(__dirname, 'dist') // 要求必须是absolute path
     },
 }
