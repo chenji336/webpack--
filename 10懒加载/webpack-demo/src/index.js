@@ -1,21 +1,25 @@
-async function getComponent() {
+import _ from 'lodash'
 
-    let  _ = await import(/* webpackChunkName: 'lodash' */ 'lodash')
+function component() {
+
     var element = document.createElement('div')
     var btn = document.createElement('button')
 
-    _ = _.default // 这里._default不一定要加，因为join方法lodash自己也抛出来了
     element.innerHTML = _.join(['Hello', 'webpack'], ' ')
-
     btn.innerHTML = 'Click me and check the console'
-
-    const print = await import(/* webpackChunkName: 'print' */ './print')
-    const printMe = print.default // 一定要加.default
-    btn.onclick = printMe
     element.appendChild(btn)
+    
+    btn.onclick = e => {
+        console.log('btn click')
 
+        // 按需加载引入一次就不会在进行加载了（可以查看network）
+        import(/* webpackChunkName: 'print' */ './print').then(module => {
+            const print = module.default // 一定要加.default
+            print() 
+        })
+    }
     return element
 
 }
 
-getComponent().then(ele => document.body.appendChild(ele))
+document.body.appendChild(component())
