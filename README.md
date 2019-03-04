@@ -375,4 +375,17 @@ webpack4.6.0+才支持；我现在使用的版本是4.29.6 (29>6)
 
 [完整的github代码](https://github.com/kalcifer/webpack-library-example)
 
+#### 基本配置
+
+目标：
++ 不打包lodash，应该使用`externals`来require用户加载好的lodash
++ 设置library名称是 webpack-numbers
++ 将library暴露为一个叫webpackNumbers的变量
++ 可以引用外部的library
+
+使用：
++ es6的import引用
++ commonJS的require引用
++ script引用
+
 
