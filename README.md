@@ -356,3 +356,8 @@ webpack4.6.0+才支持；我现在使用的版本是4.29.6 (29>6)
 `解决`：new webpack.HasedhModuleIdsPlugin()
 
 
+
+### 创建library
+可以理解成创建自己的npm包（也可以发布到unpkg.com上）
+
+
