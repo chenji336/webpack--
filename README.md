@@ -360,4 +360,19 @@ webpack4.6.0+才支持；我现在使用的版本是4.29.6 (29>6)
 ### 创建library
 可以理解成创建自己的npm包（也可以发布到unpkg.com上）
 
+#### 创建一个library
+创建过程很简单，就是export方法给别人使用
+
+主要关注如何引用：
++ ES2015模块导入
+  > import * as webpackNumbers from 'webpack-numbers'
++ commonJS模块导入
+  > const webpackNumbers = require('webpack-numbers')
++ AMD模块导入
+  > require(['webpackNumbers'], function(webpackNumbers) {webpackNumbers.wordToNum('Five')})
++ 通过script引入
+  > <script scr='http://unpkg.com/webpack-numbers'></script>(到时候主一下如何给window赋值全局变量的)
+
+[完整的github代码](https://github.com/kalcifer/webpack-library-example)
+
 
