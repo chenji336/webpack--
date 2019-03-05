@@ -388,4 +388,8 @@ webpack4.6.0+才支持；我现在使用的版本是4.29.6 (29>6)
 + commonJS的require引用
 + script引用
 
+#### 外部化lodash
+
+现在打包出来的东西是包含lodash的，很大～我们需要通过externals排除它，让它只作为peerDependency
+> 打包之后对比发现lodash确实被排除了
 
