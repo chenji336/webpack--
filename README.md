@@ -408,3 +408,9 @@ externals: [
   /^library\/.+$/
 ]
 ```
+
+#### 暴露library
+
+为了让library在各种用户环境下使用，需要添加library
+1. library的名称就是暴露给import的全局变量（默认是支持import）
+2. 配置libraryTarget来兼容其他环境，比如amd commonjs等
