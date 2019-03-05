@@ -393,3 +393,18 @@ webpack4.6.0+才支持；我现在使用的版本是4.29.6 (29>6)
 现在打包出来的东西是包含lodash的，很大～我们需要通过externals排除它，让它只作为peerDependency
 > 打包之后对比发现lodash确实被排除了
 
+#### 外部扩展的限制
+
+调用多个外部library，比如(可以想像成lodash）：
+```js
+import A from 'library/one'
+import B from 'library/two'
+```
+如果要排除就需要一个一个排除，或则使用正则表达式：
+```js
+externals: [
+  'library/one',
+  'library/two',
+  /^library\/.+$/
+]
+```
