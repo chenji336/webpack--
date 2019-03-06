@@ -414,3 +414,15 @@ externals: [
 为了让library在各种用户环境下使用，需要添加library
 1. library的名称就是暴露给import的全局变量（默认是支持import）
 2. 配置libraryTarget来兼容其他环境，比如amd commonjs等
+
+#### 最终步骤
+
+在package.json里面添加main:'dist/webpack-numbers.js'。添加生成bundle文件路径。
+
+#### 额外-添加测试
+1. 添加测试文件src/test.js 
+2. 增加.babelrc文件使用babel-node引用
+3. 添加test.html测试script引入（http-server应该在webpack-demo这个目录启动，否则找不到webpack-number.js）
+  + 记得在加载之前需要加载lodash，否则会找不到lodash
+
+注意：需要配置globalObject:this，否则引用的时候会报`window is undefined`的错误（这个是在node环境中的）
