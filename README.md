@@ -435,3 +435,9 @@ externals: [
 + 垫片来设置全局变量，比如jquery的$全局注入
 + polyfill的按需引入
 > 代码copy02起步
+
+#### shimming全局变量
+
+1. 通过 new webpack.ProvidePlugin({_:'lodash'}) 进行配置
+2. 如果只要使用某个功能 new webpack.ProvidePlugin({join: ['lodash','join']})
+  > 按需加载配合tree shaking配合，将其他不需要的功能去掉(不过测试的时候发现没有用，后续发现了如何使用在补充)
