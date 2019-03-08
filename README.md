@@ -426,3 +426,12 @@ externals: [
   + 记得在加载之前需要加载lodash，否则会找不到lodash
 
 注意：需要配置globalObject:this，否则引用的时候会报`window is undefined`的错误（这个是在node环境中的）
+
+
+### shimming
+
+**webpack是模块化的，正常情况下不推荐使用全局变量**
+
++ 垫片来设置全局变量，比如jquery的$全局注入
++ polyfill的按需引入
+> 代码copy02起步
