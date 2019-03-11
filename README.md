@@ -441,3 +441,10 @@ externals: [
 1. 通过 new webpack.ProvidePlugin({_:'lodash'}) 进行配置
 2. 如果只要使用某个功能 new webpack.ProvidePlugin({join: ['lodash','join']})
   > 按需加载配合tree shaking配合，将其他不需要的功能去掉(不过测试的时候发现没有用，后续发现了如何使用在补充)
+
+#### 细粒度shim
+
+解决问题：this只想指向window，否则使用this.alert在commonJS中会报错
+解决：
+1. npm i -D imports-loader
+2. imports-loader?this=>window

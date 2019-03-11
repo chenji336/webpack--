@@ -8,6 +8,14 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist')
     },
+    module: {
+        rules: [
+            {
+                test: require.resolve('./src/index.js'), // 效果跟path.resolve(__dirname, './src/index.js)一样
+                use: 'imports-loader?this=>window'
+            }
+        ]
+    },
     plugins: [
         new webpack.ProvidePlugin({
             // _: 'lodash'

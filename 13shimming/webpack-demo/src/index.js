@@ -5,6 +5,9 @@ function component() {
     // element.innerHTML = _.join(['Hello', 'webpack'], ' ')
     element.innerHTML = join(['Hello', 'webpack'], ' ')
 
+    // 假设处于 `window` 上下文
+    this.alert('Hmmm, this proboly isn\'t a idea!')
+
     return element
 }
 

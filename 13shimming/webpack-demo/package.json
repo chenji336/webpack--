@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "imports-loader": "^0.8.0",
     "lodash-es": "^4.17.11",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3"
