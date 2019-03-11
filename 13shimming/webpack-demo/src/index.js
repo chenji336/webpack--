@@ -1,3 +1,8 @@
+import { file, parse } from './global.js'
+
+console.log('file:', file)
+console.log('parse:', parse())
+
 function component() {
     var element = document.createElement('div')
 
@@ -6,7 +11,8 @@ function component() {
     element.innerHTML = join(['Hello', 'webpack'], ' ')
 
     // 假设处于 `window` 上下文
-    this.alert('Hmmm, this proboly isn\'t a idea!')
+    // this.alert('Hmmm, this proboly isn\'t a idea!')
+    window.alert('Hmmm, this proboly isn\'t a idea!')
 
     return element
 }

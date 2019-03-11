@@ -10,9 +10,13 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: require.resolve('./src/index.js'), // 效果跟path.resolve(__dirname, './src/index.js)一样
-                use: 'imports-loader?this=>window'
+            // {
+            //     test: require.resolve('./src/index.js'), // 效果跟path.resolve(__dirname, './src/index.js)一样
+            //     use: 'imports-loader?this=>window'
+            // },  // 和 export 一同使用产生bug
+            { 
+                test: require.resolve('./src/global.js'),
+                use: 'exports-loader?file,parse=helpers.parse'
             }
         ]
     },

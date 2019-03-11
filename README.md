@@ -444,7 +444,19 @@ externals: [
 
 #### 细粒度shim
 
-解决问题：this只想指向window，否则使用this.alert在commonJS中会报错
+问题：this只想指向window，否则使用this.alert编译后的文件，在浏览器也会报错的
 解决：
 1. npm i -D imports-loader
 2. imports-loader?this=>window
+
+影响：
+如果使用了impors-loader，后续有引入的export就会报错，[按照解决方案](https://github.com/webpack/webpack/issues/8656)还是没有解决，先不考虑，后续遇到再来解决。
+
+#### 全局变量
+
+问题：老旧的library没有进行exports，但是我又想用里面的变量
+解决：
+1. npm i -D exports-loader
+2. exports-loader?file,parse=helpers.parse
+
+**需要去掉imports-loader**，否则会有问题
