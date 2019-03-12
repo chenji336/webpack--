@@ -460,3 +460,14 @@ externals: [
 2. exports-loader?file,parse=helpers.parse
 
 **需要去掉imports-loader**，否则会有问题
+
+#### 加载polyfill
+
+一般要兼容ie的情况下，都需要使用babel-polyfill。除非你不使用一些新的语法特性
+
+src下面的testPolyfill.html就是测试babel-polyfill在ie9中的使用情况
+
+**在缺损的浏览器上才使用polyfill**
+1. 通过assign和fetch进行判断是否是现代浏览器
+2. 如果不是则动态的添加script是polyfill.bundle.js
+  > 当然也可以自己做成按需加载
