@@ -20,6 +20,11 @@ module.exports = {
             { 
                 test: require.resolve('./src/global.js'),
                 use: 'exports-loader?file,parse=helpers.parse'
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: 'babel-loader'
             }
         ]
     },

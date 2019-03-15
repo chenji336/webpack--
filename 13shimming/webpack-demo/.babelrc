@@ -1,0 +1,11 @@
+{
+    "presets": [
+        ["env", {
+            "targets": {
+                // "browsers": ["IE>=9"]
+                "browsers": ["chrome >= 59"]
+            },
+            "useBuiltIns": true
+        }]
+    ]
+}

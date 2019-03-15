@@ -471,3 +471,12 @@ src下面的testPolyfill.html就是测试babel-polyfill在ie9中的使用情况
 1. 通过assign和fetch进行判断是否是现代浏览器
 2. 如果不是则动态的添加script是polyfill.bundle.js
   > 当然也可以自己做成按需加载
+
+#### 深度优化
+
+通过**babel-preset-env**指定编译环境，对polyfill进行按需引入
+1. npm i -D babel-loader babel-core babel-preset-env
+2. webpack进行babel-loader配置，exclude不需要的文件夹和文件
+3. .babelrc添加env+useBuiltIns就可以使用了
+  > 可以测试IE>=9和Chrome>=59生成的polyfill的大小
+
