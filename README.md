@@ -490,3 +490,11 @@ src下面的testPolyfill.html就是测试babel-polyfill在ie9中的使用情况
 
 1. 添加http-server来启动dist
 2. 启动之后发现可以访问，这个时候ctrl+c关闭掉服务，服务器再刷新回发现 `无法访问网站`(当然也可以通过设置chrome-network-offline online)
+
+#### 添加Workbox
+
+1. npm i -D workbox-webpack-plugin
+2. 配置webpack，WorkboxPlugin.GenerateSw
+3. 观察生成的文件，会发现多了service-worker和precache-manifest.xxxx.js
+  > service-worker很好理解，precahce是service-worker引用的文件，里面主要是放一些需要缓存的文件名称.
+4. 关闭服务或则offline online查看效果，会发现确实一直保存着
