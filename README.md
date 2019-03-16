@@ -485,3 +485,8 @@ src下面的testPolyfill.html就是测试babel-polyfill在ie9中的使用情况
 一句话：PWA，在离线的情况下也可以进行访问
 技术：Service Workers， 本例中使用谷歌的Workbox实现此目的
 代码来自：管理输出
+
+#### 现在我们并没有离线环境运行过
+
+1. 添加http-server来启动dist
+2. 启动之后发现可以访问，这个时候ctrl+c关闭掉服务，服务器再刷新回发现 `无法访问网站`(当然也可以通过设置chrome-network-offline online)
