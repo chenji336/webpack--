@@ -480,3 +480,8 @@ src下面的testPolyfill.html就是测试babel-polyfill在ie9中的使用情况
 3. .babelrc添加env+useBuiltIns就可以使用了
   > 可以测试IE>=9和Chrome>=59生成的polyfill的大小
 
+### 渐进式网络应用程序
+
+一句话：PWA，在离线的情况下也可以进行访问
+技术：Service Workers， 本例中使用谷歌的Workbox实现此目的
+代码来自：管理输出
