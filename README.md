@@ -498,3 +498,9 @@ src下面的testPolyfill.html就是测试babel-polyfill在ie9中的使用情况
 3. 观察生成的文件，会发现多了service-worker和precache-manifest.xxxx.js
   > service-worker很好理解，precahce是service-worker引用的文件，里面主要是放一些需要缓存的文件名称.
 4. 关闭服务或则offline online查看效果，会发现确实一直保存着
+
+
+### TypeScript
+
+例子继承自02起步
+
