@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "allowJs": true, // 允许js也被编译
+        "module": "es6",
+        "target": "es5", // 目标文件
+        "noImplicitAny": true, // 如果类型没有填写默认不会变成any，会直接报错
+        "sourceMap": true,
+    }
+}
