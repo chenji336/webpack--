@@ -485,6 +485,10 @@ src下面的testPolyfill.html就是测试babel-polyfill在ie9中的使用情况
 一句话：PWA，在离线的情况下也可以进行访问
 技术：Service Workers， 本例中使用谷歌的Workbox实现此目的
 代码来自：管理输出
+原理： sw可以拦截和处理网络请求，比如请求html页面，发现断网，则取本地的
+作用：
+- 离线应用
+- 后台应用处理大规模数据，然后通过跟页面通信把数据传递也主线层
 
 #### 现在我们并没有离线环境运行过
 
@@ -503,4 +507,37 @@ src下面的testPolyfill.html就是测试babel-polyfill在ie9中的使用情况
 ### TypeScript
 
 例子继承自02起步
+
+#### 基础安装
+
+1. npm i -D typescript ts-loader
+2. 配置tsconfig.json
+  > [tsconfig各个配置项意义](https://github.com/hstarorg/HstarDoc/blob/master/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/TypeScript%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6tsconfig%E7%AE%80%E6%9E%90.md)
+3. 配置webpack，加入loader
+
+#### typescript和babel一起使用
+[babel+typescript](https://segmentfault.com/q/1010000010517252/a-1020000010655071)
+
+> typescript也可以编译成es5,为啥还要用babel？
+1. babel插件，可以实现按需加载
+2. typescript编译成es5,那么es6特性是用不了的（需要代码验证）
+
+> 如何配合使用
+```js
+{
+  test: /\.ts(x?)$/,
+  exclude: /node_modules/,
+  use: [
+    {
+      loader: 'babel-loader' // 在转成es5
+    },
+    {
+      loader: 'ts-loader' // 转成es6
+    }
+  ] 
+}
+然后 tsconfig 里面要禁止 jsx
+"jsx": "preserve"
+```
+
 
