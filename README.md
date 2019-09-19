@@ -423,6 +423,11 @@ externals: [
 
 在package.json里面添加main:'dist/webpack-numbers.js'。添加生成bundle文件路径。
 
+#### 发布到npm上
+[参考资料](https://www.cnblogs.com/weiqinl/p/9786966.html)
+1. 登录 `npm login`
+2. npm publish
+
 #### 额外-添加测试
 1. 添加测试文件src/test.js 
 2. 增加.babelrc文件使用babel-node引用

@@ -5,7 +5,7 @@ const config = require('./webpack.config.js')
 const options = {
     contentBase: './dist',
     hot: true,
-    host: 'localhost'
+    host: 'localhost' // 不可少，否则报错
 }
 
 // HMR入口点
