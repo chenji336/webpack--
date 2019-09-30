@@ -250,11 +250,13 @@ new webpack.DefinePlugin({
   'process.env.NODE_ENV': JSON.stringify('production')
 })
 ```
-等价于 NODE_ENV=production node index.js
+~~等价于 NODE_ENV=production node index.js~~
 
 使用：process.env.NODE_ENV
 
 优势： 很多库会根据是生产环境来进行代码的优化，如果使用的是react，会发现production打包的时候会小很多
+
+补充：目的是为了在 web 上也能获取到 process.env.NODE_ENV，export 的话只能在 node 环境中获取到
 
 #### 压缩css
 很多人说使用css-loader.options.minimize:true,这个在高版本中是无效的
