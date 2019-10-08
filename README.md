@@ -229,7 +229,7 @@ webpack-dev-server内部使用了webpack-dev-middleware
 ### 生产环境构建
 
 #### 配置
-1. npm i -D webpack-merge,用来合并代码
+1. npm i -D webpack-merge,用来合并代码(深度复制比较，就算是对象嵌套对象也不会直接把对象给覆盖，只会覆盖里面的属性)
 2. 分成是那个文件： webpack.common.js webpack.dev.js webpack.prod.js
 3. common是公用部分  dev和prod分别是开发和生产环境部分
 > 如果git reset 到这个版本，会有问题，因为不小心删掉了webpack.common.js，需要注意下
