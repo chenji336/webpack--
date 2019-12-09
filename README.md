@@ -226,6 +226,42 @@ webpack-dev-server内部使用了webpack-dev-middleware
 [lodash vs lodash-es](https://www.blazemeter.com/blog/the-correct-way-to-import-lodash-libraries-a-benchmark)
 [tree shaking缺陷和解决方案](https://juejin.im/post/5b8ce49df265da438151b468)
 
+#### 总结
+
+1. 满足tree shaking条件：
+
+- 使用es6的export，因为es5的module.export.是动态的，es6才是静态，[文章参考](https://loveky.github.io/2018/02/26/tree-shaking-and-pkg.module/)
+- 打包之后，使用es6 export会标明没有使用过，但是代码还是在打包的文件中
+- 启用代码压缩，就可以tree shaking掉没有使用的代码
+
+2. antd为啥有dist、lib、es这三个文件夹？
+
+[文章参考](https://segmentfault.com/a/1190000018242549)
+
+- dist:整个组件库的打包目录
+- lib：es5的打包目录（使用`module.export = {}`)
+- es：es6的打包目录(使用 `export {}`)
+  - es6才能tree shaking成功
+
+> 如何指向es目录文件了？
+
+package.json：
+
+- main：指向es5,lib文件夹
+- module：指向es6，es文件夹
+
+打包工具支持的话默认就会去找module字段进行打包，就算`exclude：/node_modules/`,不知道的找main入口也不影响打包
+
+3. antd为什么不放源码，这样引用不更方便吗？
+
+- 对于用户来说下载npm包过大
+- 需要源码对应的打包配置文件，并且每次都需要进入到node_modules找到文件打包
+
+4. 搭建自己组件库 
+
+[github](https://github.com/closertb/antd-doddle)
+[文章参考](https://segmentfault.com/a/1190000018242549)
+
 ### 生产环境构建
 
 #### 配置
