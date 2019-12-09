@@ -430,6 +430,10 @@ externals: [
 1. 登录 `npm login`
 2. npm publish
 
+> 报错的可能原因
+
+- [registry错误](https://segmentfault.com/q/1010000013122721/a-1020000013136017)
+
 #### 额外-添加测试
 1. 添加测试文件src/test.js 
 2. 增加.babelrc文件使用babel-node引用
@@ -550,5 +554,15 @@ src下面的testPolyfill.html就是测试babel-polyfill在ie9中的使用情况
 然后 tsconfig 里面要禁止 jsx
 "jsx": "preserve"
 ```
+
+## 额外知识补充
+
+### alias 也想提示和进入
+
+解决：添加 jsconfig
+实例：
+- study中 `ctr+p` 搜索 jsconfig
+- vue可以参考 vue-music
+- react可以参考 react-pxq
 
 
