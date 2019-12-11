@@ -228,6 +228,8 @@ webpack-dev-server内部使用了webpack-dev-middleware
 
 #### 总结
 
+[你的Tree-Shaking并没什么卵用](https://juejin.im/post/5a5652d8f265da3e497ff3de#heading-8)
+
 1. 满足tree shaking条件：
 
 - 使用es6的export，因为es5的module.export.是动态的，es6才是静态，[文章参考](https://loveky.github.io/2018/02/26/tree-shaking-and-pkg.module/)
@@ -261,6 +263,8 @@ package.json：
 
 [github](https://github.com/closertb/antd-doddle)
 [文章参考](https://segmentfault.com/a/1190000018242549)
+[文章参考-次要](https://zhuanlan.zhihu.com/p/71995415)
+[搭建自己组件库](/Users/liulei/Documents/GitHub/tool/build-my-component-library/README.md)
 
 ### 生产环境构建
 
@@ -468,7 +472,9 @@ externals: [
 
 > 报错的可能原因
 
-- [registry错误](https://segmentfault.com/q/1010000013122721/a-1020000013136017)
+- [registry错误](https://segmentfault.com/q/1010000013122721/a-1020000013136017):registry不对
+
+[更新npm包](https://blog.csdn.net/cvper/article/details/79051048)
 
 #### 额外-添加测试
 1. 添加测试文件src/test.js 

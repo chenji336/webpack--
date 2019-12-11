@@ -2,3 +2,4 @@ node_modules
 webpack-demo-*
 **/dist/*
 !**/dist/index.html
+gitlog
