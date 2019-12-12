@@ -597,6 +597,8 @@ src下面的testPolyfill.html就是测试babel-polyfill在ie9中的使用情况
 "jsx": "preserve"
 ```
 
+### 编写一个loader
+
 ## 额外知识补充
 
 ### alias 也想提示和进入
