@@ -13,7 +13,17 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     'style-loader',
-                    'css-loader'
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: false, // 默认是 false
+                            
+                            /**** css module配置 ****/
+                            modules: true,
+                            localIdentName: '[path]-[name]-[hash:base64:5]',
+                            camelCase: true
+                        }
+                    }
                 ]
             },
             {

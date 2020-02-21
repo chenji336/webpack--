@@ -1,13 +1,14 @@
 import example from './example.txt'
 
-const fn = () => {
-  console.log('arrow fn')
-}
-fn()
 console.log('example:', example)
 
-export const isNull = val => val === null
+// const fn = () => {
+//   console.log('arrow fn')
+// }
+// fn()
 
-export const unique = arr => [...new Set(arr)]
+// export const isNull = val => val === null
 
-console.log('unique:', unique([1,2,3,3]))
+// export const unique = arr => [...new Set(arr)]
+
+// console.log('unique:', unique([1,2,3,3]))

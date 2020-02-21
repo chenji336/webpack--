@@ -1,5 +1,5 @@
 {
-  "name": "number",
+  "name": "01base",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,9 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "chenji",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
-    "chenji336-num": "^1.0.0"
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   }
 }

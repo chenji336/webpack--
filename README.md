@@ -2,7 +2,12 @@
 # 学习webpack指南中的demo，进行比较学习
 
 ## 须知
+
 指南的所有的例子都是在webpack-demo中，其他的都是相应的扩展，可以单独查看（里面会有README的介绍)
+
+## webpack好文章整理
+
+[一步步从零开始用 webpack 搭建一个大型项目](https://juejin.im/post/5de06aa851882572d672c1ad)
 
 ## 各个目录知识点
 
@@ -597,7 +602,17 @@ src下面的testPolyfill.html就是测试babel-polyfill在ie9中的使用情况
 "jsx": "preserve"
 ```
 
-### 编写一个loader
+### 编写一个loader和plugin
+
+参考16和17相应的文件夹
+
+> 如何调试webpack代码
+
+参考：/Users/liulei/Documents/GitHub/NODE/README.md
+
+webpack 与 ast 关系：
+
+- 在webpack执行流程中,make是一个重要的阶段,在一个新的 Compilation 创建完毕后，即将从 Entry 开始读取文件，根据文件类型和配置的 Loader 对文件进行编译，将loader处理后的文件通过acorn抽象成抽象语法树AST,然后遍历AST，递归分析构建该模块的所有依赖
 
 ## 额外知识补充
 
@@ -609,4 +624,11 @@ src下面的testPolyfill.html就是测试babel-polyfill在ie9中的使用情况
 - vue可以参考 vue-music
 - react可以参考 react-pxq
 
+> vue文件还是不行
+
+解决方案：
+1. 更新vetur到最新版
+2. vscode如果不能更新vetur到最新版本，那么就先升级vscode，在升级vetur
+3. 结尾加上 .vue
+   好处：“跳转到定义” 的时候就可以跳转到相应的vue组件了，否则不行
 
