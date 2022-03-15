@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "lodash-es": "^4.17.11",
+    "lodash-es": "^4.17.21",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3",
     "webpack-deep-scope-plugin": "^1.6.0"
